@@ -1,14 +1,14 @@
-FROM ubuntu
+FROM httpd
 
 MAINTAINER NewstarCorporation
 
-RUN apt-get install -y && apt-get install -y apache2
+RUN yum install httpd -y
 
 RUN echo "Hello to Docker CI/CD pipeline" >> /index.html
 
 COPY /index.html /var/www/html/
 
-CMD [“apache2ctl”, “-D”, “FOREGROUND”]
+CMD [“/usr/sbin/httpd”, “-D”, “FOREGROUND”]
 
 EXPOSE 80
 
