@@ -2,7 +2,7 @@ FROM centos:latest
 
 MAINTAINER NewstarCorporation
 
-RUN yum -y install httpd
+RUN yum install httpd -y
 
 RUN echo "Hello to Docker CI/CD pipeline" >> /index.html
 
